@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\title{MAT157 Assignment 1 Q1}
+\begin{document}
+\subsubsection*{Q1a).}
+\begin{align*}
+\sin(\frac{13}{24} \pi) &= \sqrt{\frac{1 - \cos( \frac{13}{12}\pi)}{2}}\\
+&= \sqrt{\frac{1 - \cos(\frac{9}{12} \pi + \frac{4}{12} \pi)}{2}}\\
+&=\sqrt{\frac{1 - \cos(\frac{3}{4} \pi) \cos(\frac{1}{3} \pi) + \sin(\frac{3}{4} \pi) \sin(\frac{1}{3} \pi)}{2}}\\
+&=\sqrt{\frac{1+ \frac{1}{2 \sqrt{2}} + \frac{\sqrt{3}}{2\sqrt{2}}}{2}}\\
+&=\sqrt{\frac{2\sqrt{2} + 1 +\sqrt{3}}{4\sqrt{2}}}
+\end{align*}
+\subsubsection*{Q1b).}
+\begin{align*}
+\cos(5\alpha) &= \cos(2\alpha +3\alpha)\\
+&=\cos(2\alpha)\cos(3\alpha) - \sin(2\alpha)\sin(3\alpha)\\
+&=\cos(2\alpha)[\cos(\alpha)\cos(2\alpha) - \sin(\alpha)\sin(2\alpha)] - 2\sin(\alpha)\cos(\alpha)[\cos(\alpha)\sin(2\alpha) + \cos(2\alpha)\sin(\alpha)]\\
+&=\cos(2\alpha)[\cos(2\alpha)\cos(\alpha) - 2\sin^{2}(\alpha)\cos(\alpha)] -2\sin(\alpha)\cos(\alpha)[2\sin(\alpha)\cos^{2}(\alpha) + (2\cos^{2}(\alpha) -1)\sin(\alpha)]\\
+&=\cos(2\alpha)\cos(\alpha)[\cos(2\alpha) - 2 +2\cos^{2}(\alpha)]- 2\sin(\alpha)\cos(\alpha)[2\sin(\alpha)\cos^{2}(\alpha) + 2\cos^{2}(\alpha)\sin(\alpha) - \sin(\alpha)]\\
+&=\cos(2\alpha)\cos(\alpha)[\cos(2\alpha) + (2\cos^{2}(\alpha) - 1 - 1)] - 2\sin^{2}(\alpha)\cos(\alpha)[4\cos^{2}(\alpha) - 1]\\
+&=\cos(2\alpha)\cos(\alpha)[\cos(2\alpha) + cos(2\alpha) - 1] - 2(1-\cos^{2}(\alpha))(4\cos^{2}(\alpha) - 1)\cos(\alpha)\\
+&=\cos(2\alpha)\cos(\alpha)[2\cos(2\alpha) - 1] - 2[4\cos^{2}(\alpha) -4\cos^{4}(\alpha) + cos^{2}(\alpha) - 1]\cos(\alpha)\\
+&=\cos(2\alpha)\cos(\alpha)[4\cos^{2}(\alpha) - 2 - 1] - 2[5\cos^{3}(\alpha) - \cos(\alpha) - 4\cos^{5}(\alpha)]\\
+&=\cos(2\alpha)\cos(\alpha)[4\cos^{2}(\alpha) - 3] - 10\cos^{3}(\alpha) + 2\cos(\alpha) + 8\cos^{5}(\alpha)\\
+&=4\cos^{3}(\alpha)\cos(2\alpha) - 3\cos(2\alpha)\cos(\alpha) - 10\cos^{3}(\alpha) + 2\cos(\alpha) + 8\cos^{5}(\alpha)\\
+&=4\cos^{3}(\alpha)(2\cos^{2}(\alpha) - 1) - 3(2\cos^{2}(\alpha) - 1)\cos(\alpha) - 10\cos^{3}(\alpha) + 2\cos(\alpha) + 8\cos^{5}(\alpha)\\
+&= 8\cos^{5}(\alpha) - 10\cos^{3}(\alpha) + 3\cos(\alpha) - 10\cos^{3}(\alpha) + 2\cos(\alpha) + 8\cos^{5}(\alpha)\\
+&= 16\cos^{5}(\alpha) - 20\cos^{3}(\alpha) + 5\cos(\alpha)\\
+\end{align*}
+\subsection*{Q1c).}
+\begin{align*}
+\cos(\alpha)\cos(\beta)\cos(\gamma) &= \frac{1}{2}(\cos(\alpha +\beta) + \cos(\alpha - \beta))\cos(\gamma)\\
+&=\frac{1}{2}(\cos(\gamma)\cos(\alpha+\beta) + \cos(\gamma)\cos(\alpha - \beta))\\
+&=\frac{1}{2}(\frac{1}{2}[\cos(\gamma +\alpha + \beta) + \cos(\gamma - \alpha - \beta)] + \frac{1}{2}[\cos(\gamma + \alpha - \beta) \cos(\gamma - \alpha + \beta)])\\
+&=\frac{1}{4}(\cos(\gamma + \alpha + \beta) + \cos(\gamma - \alpha - \beta) + \cos(\gamma + \alpha - \beta) + \cos(\gamma - \alpha + \beta))\\
+\end{align*}
+\end{document}

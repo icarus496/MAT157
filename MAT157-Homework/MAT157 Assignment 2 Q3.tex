@@ -1,0 +1,24 @@
+\documentclass{article}
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage{bbold}
+\usepackage{indentfirst}
+\title{MAT157 Assignment 1 Q3}
+\begin{document}
+\subsubsection*{Q3).}
+
+{\large Proposition:}\\
+ Let A, B be non-empty sets $A, B \subseteq \mathbb{R}, A \cup B = \mathbb{R}$, and $a < b, \forall a \in A, \forall b \in B$. Then, there exists an $s \in R$ such that $a \leq s \leq b, \forall a \in A, b \in B$. In other words, $P(13) \Rightarrow P(13^{'})$. \\
+
+{\large Proof:}\\
+By the definition of upper bound, $B$ is the set of upper bounds of $A$, with the possible exception of a maximum in $A$. That means $A$ has an upper bound. Thus, by the completeness axiom, $A$ has a least upper bound. In other words, $\exists s \in R$ such that  $a \leq s, \forall a \in A$ ($s > a$ unless $A$ mas a maximum, in which case $s=A$), and, since it is a least upper bound, $s \leq b, \forall b \in B$ ($s < b$ unless A has a maximum, in which case $s=Min(b)$). So, $a \leq s \leq b,  \forall a \in A, b \in B$, meaning that $P(13) \Rightarrow P(13^{'})$. \\
+Next, need to show that $P(13^{'}) \Rightarrow P(13)$.\\
+
+{\large Proposition:}\\
+If $s \in \mathbb{R}$ and $S$ has an upper bound, $S$ has a least upper bound. In other words, $P(13^{'}) \Rightarrow P(13)$.  \\
+
+{\large Proof:}\\
+Let $B = \{x \in \mathbb{R} : x > s, \forall s \in S\}$ and $A = \{x \in \mathbb{R} : x \notin b\}$. Since an element of $\mathbb{R}$  is either in $B$ or not in $B$, $A \cup B = \mathbb{R}$. $B$ is the set of upper bounds of $A$, save for only the maximum of $A$, if it exists. Also, $S \subseteq A$, since no element of $S$ is greater than every element of $S$. From the definition of $A$, $\forall a \in A, s \in S,  a \leq s$ (Because no element of $A$ is bigger than any element of $S$). This means that if $A$ has a least upper bound, so does $S$, and the least upper bound of $A$ is equal to that of $S$. So, if $A$ has a least upper bound, the proof is complete. Apply $P(13^{'})$, so $\exists k \in \mathbb{R} : a \leq k \leq b, \forall a \in A, b \in B$. This is the definition of a least upper bound. So, $A$ has a least upper bound, and therefore, so does $S$, completing the proof. \\
+Therefore, $P(13^{'}) \Rightarrow P(13)$ and $P(13) \Rightarrow P(13^{'})$, so they are equivalent.
+
+\end{document}

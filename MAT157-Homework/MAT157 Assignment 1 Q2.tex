@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage{bbold}
+\title{MAT157 Assignment 1 Q2}
+\begin{document}
+\subsubsection*{Q2a).}
+Suppose $\sqrt{210}= \frac{n}{m}$, for minimal $n, m \in \mathbb{Z}$. Then:
+\begin{align*}
+201m^{2} &= n^{2}\\
+(2)(105)m^{2} &= n^{2}\\
+\end{align*}
+So $n^{2}$ is even $\Rightarrow n$ is even $\Rightarrow n=2k, k \in \mathbb{Z}$. So,
+\begin{align*}
+(2)(105)m^{2} &= 4k^{2}\\
+(105)m^{2} &= 2k^{2}\\
+\end{align*}
+So $(105)m^{2}$ is even $\Rightarrow 105$ is even or $m^{2}$ is even. Since $105$ is not even, $m^2$ is even $\Rightarrow m$ is even, so both $m$ and $n$ are even, contradicting the assumption that $m, n$ are minimal. $\sqrt{210}$ is therefore irrational.  
+\subsubsection*{Q2b).}
+First, show that $a$ is irrational $\Rightarrow \sqrt{a}$ is irrational. Assume by contradiction that $\sqrt{a} = \frac{m}{n}, m, n \in \mathbb{Z} \Rightarrow a = \frac{m^{2}}{n^{3}}$, but since $a$ is irrational, this is a contradiction, completing the proof. So, use this to prove that $\sqrt{7} - \sqrt{2}$ is irrational. 
+\begin{align*}
+(\sqrt{7} - \sqrt{2})^{2} &= 9 - 2\sqrt{14} 
+\end{align*}
+By the above, if $(\sqrt{7} - \sqrt{2})^{2}$ is irrational, $\sqrt{7} - \sqrt{2}$ is also irrational. Assume by contradiction that: \\
+\begin{align*}
+&(\sqrt{7} - \sqrt{2})^{2} = \frac{m}{n},  m, n \in \mathbb{Z}\\
+&\Rightarrow \sqrt{14} - \frac{9n - m}{2n}\\
+&\Rightarrow \sqrt{14} \text{is rational. If that's the case, you should be able to pick minimal $a, b \in \mathbb{Z}$ so that $\frac{a}{b} = \sqrt{14}$.}\\
+&\Rightarrow a^{2} = 14b^{2}\\
+&\Rightarrow \text{$a^{2}$ is even, $\Rightarrow$ $a$ is even, $\Rightarrow a=2p, p \in \mathbb{Z}$.}\\
+&\Rightarrow 4k^{2} = 14b^{2}\\
+&\Rightarrow 2k^{2} = 7b^{2}\\
+&\Rightarrow \text{$7b^{2}$ is even$\Rightarrow 7$ is even or $b^{2}$ is even. $7$ is not even, so $b^{2}$ is even $\Rightarrow b$ is even.}\\
+\end{align*}
+That means $a, b$ are both even, contradicting the assumption that they were minimal. Thus, $\sqrt{14}$ is irrational $\Rightarrow (\sqrt{7} - \sqrt{2})^{2}$ is irrational $\Rightarrow \sqrt{7} - \sqrt{2}$ is irrational, completing the proof.
+\subsubsection*{Q2c).}
+let $\sqrt[3]{7} = \frac{a}{b}$ by contradiction, with minimal $a, b \in \mathbb{Z}$.Then,\\
+\begin{align*}
+7b^{3} &= a^{3}\\
+Mult_{7}(7b^{3}) &= Mult_{7}(a^{3})\\
+1 + 3Mult_{7}(b) &= 3Mult_{7}(a)\\
+\end{align*} 
+Since $a, b$ are in lowest terms, $Mult_{7}(a)$ or $Mult_{7}(b)$ must be 0. If $Mult_{7}(b) = 0$, either $Mult_{7}(a) = 0$ (Which is a contradiction, because only one can be 0), or $3Mult_{7}(a) \geq 3$, which is also a contradiction because it must be equal to $3Mult_{7}(b) + 1 = 1$. If $Mult_{7}(a) = 0$, that is also a contradiction, because it must be equal to  $3Mult_{7}(b) + 1$, which is minimum 4. Therefore,  $\sqrt[3]{7}$ is irrational.
+\end{document}
