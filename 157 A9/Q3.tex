@@ -4,6 +4,30 @@
 \usepackage{amsmath}
 \usepackage{bbold}
 \begin{document}
+I want to start by apologizing because I know there's definitely a better way to prove this so I'm just sorry you need to mark this monstrosity. 
+This proof doesn't explicitly provide a partition on which the upper sum is less than epsilon, but it does show that such a partition must exist.\\
 On any interval [a,b] in [0,1], there is an irrational number, since the irrationals are dense. So, on any interval, the infimum of $f$ is 0, so all lower sums are 0. In that case, to satisfy the Riemann Criterion, it suffices to show that for all $\varepsilon > 0$ we can find a partition such that $U(f, \mathcal{P}) < \varepsilon$. We know that the max value of $f$ on [0, 1] = 1, since no fraction in lowest terms will have a denominator less than 1, and 1 is a rational number $\frac{1}{1}$. The same argument can be applied to the first interval, [0, $t_1$], since $0 = \frac{0}{1}$. It follows, then, that $M_{1} = M_{n} = 1$. Similarly, on (0, 1), the max value of $f$ is $\frac{1}{2}$. 
- 
+
+So, when given a rational number $\frac{a}{b}$, $f$ returns $\frac{1}{b}$. Using this fact, we can place an upper bound on the number of times a number can be contributed to the sum. For example, $f(x) = \frac{1}{3}$ can only occur a $\emph{maximum}$ of two times, as there are only 2 rational numbers with a denominator of 3 in [0,1]. In general, a denominator of $\frac{1}{n}$ can contribute to the sum a maximum of $n-1$ times (and if $n$ isn't prime it will be less than that. Each value of $x$ can be in a maximum of two intervals (consider $x \in \mathcal{P}$, you get $[t_{i-1}, x], [x, t_{1+1}]$). Therefore, $M_i$ will equal $\frac{1}{n}$ a maximum of $2(n-1)$ times.
+
+Define $M_{i}^{p} = sup(\{f(x):x\in[t_{i-1}, t_{i}]\} \cap \{\frac{1}{q}:q\geq p\})$. Let $\mathcal{P}$ be a partition of even points spaced $\frac{1}{k}$ apart, so $t_{i-1} - t_{i} = \frac{1}{k}$ and $n = k$.  Using these definitions, we can say:
+\begin{align*}
+	U(f, \mathcal{P}) &= \sum_{i=1}^{k} M_{i} (t_{i-1} - t_{i})\\
+	&=  \sum_{i=1}^{k} M_{i} \frac{1}{k}\\
+	&=  \frac{1}{k}\left(\left[\sum_{i=2}^{k-1} M_{i}\right] + 1 + 1\right) &&\text{Since $M_{0} = M_{k} = 1$}\\ 
+	&=\frac{1}{k}\left[\sum_{i=2}^{k-1} M_{i}\right] + \frac{2}{k}\\
+	&\leq \frac{1}{k}\left[\sum_{i=2}^{k-1} M_{i}^{3}\right] +\frac{2(2-1)}{2k} + \frac{2}{k}\\
+\end{align*}
+Since $M_{i} = \frac{1}{2}$ a maximum of $2(2-1)$ times, so we can let $M_{i}$ become $M_{i}^3$ because all of the $M_{i} = \frac{1}{2}$ are accounted for.
+\begin{align*}
+	&\leq \frac{1}{k}\left[\sum_{i=2}^{k-1} M_{i}^{4}\right] +\frac{2(3-1)}{3k} +\frac{2}{2k} + \frac{2}{k}\\
+	&\text{etc...}\\
+	&\leq \frac{1}{k}\left[\sum_{i=2}^{k-1} M_{i}^{m}\right] +\left[\sum_{j=2}^{m-1} \frac{2(j-1)}{jk}\right] + \frac{2}{k}\\
+	&\leq \frac{1}{k}\left[\sum_{i=2}^{k-1} \frac{1}{m}\right] +\left[\sum_{j=2}^{m-1} \frac{2(j-1)}{jk}\right] + \frac{2}{k}\\
+	&= \frac{k-2}{km}+\left[\sum_{j=2}^{m-1} \frac{2(j-1)}{jk}\right] + \frac{2}{k}\\
+\end{align*}
+Call this $t(k, m)$. Notice that $\lim_{k\to \infty} t(k, m) = \frac{1}{m}$. Letting $k$   become arbitrarily large corresponds to letting the distance in the partition $\mathcal{P}$ become arbitrarily close to 0. Of course, it never actually becomes 0, but we know from the definition of limits at $\infty$ that $\forall \epsilon_{1} \exists H: \forall k > M, t(k, m) - \frac{1}{m} < \epsilon_{1}$. So, can pick a $k$ so that $t(k, m) < \frac{1}{m} +\epsilon_{1}$. Note that in this case $\epsilon_{1} \neq \varepsilon$ that was given above. But, since for all $m$, $U(f, \mathcal{P}) \leq t(k, m)$, we know that $U(f, \mathcal{P}) < \frac{1}{m} +\epsilon_{1}$ for some partition $\mathcal{P}$ defined by $k$. And since this is true for all $m$, we can just pick an $m$ sufficiently large so that $\frac{1}{m} < \frac{\varepsilon}{2}$ and a $k$ so that $t(k, m) - \frac{1}{m} < \frac{\varepsilon}{2}$, and then we have $U(f, \mathcal{P}) \leq t(k, m) < \varepsilon$ on the partition defined by our choice of $k$.
+
+
+
 \end{document}
