@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{bbold}
+\newcommand{\mprime}{m_{i}^{\prime}}
+\newcommand{\Mprime}{M_{i}^{\prime}}
+\newcommand{\M}{M_{i}}
+\newcommand{\m}{m_{i}}
+\begin{document}
+\subsection*{a.)}
+Suppose $M_{i} \geq 0, m_{i} \geq 0$:\\
+Then, $M_{i} = M_{i}^{\prime}, m_{i} = m_{i}^{\prime}$, so $M_{i}^{\prime} -  \mprime = \M - \m$\\
+
+Suppose $M_{i} \geq 0, m_{i} \leq 0$:\\
+Then $0\leq m_{i}^{\prime} \leq |m_{i}|$ and $M_{i}^{\prime} = \text{max}\{M_{i}, |m_{i}|\}$. But, $\Mprime - \mprime  \leq \Mprime - |\m| = \text{max}\{\M - |\m|, 0\} \leq \M$. So, $\Mprime - \mprime \leq \M \leq \M - \m$.\\
+
+Finally, $\M \leq 0, \m \leq 0$:\\
+Then, $\Mprime = |\m|, \mprime = |\M|$, and $\M - \m = |\m| + \M = |\m| - |\M| = \mprime - \Mprime.$\\
+
+So, in all cases, $\Mprime - \mprime \leq \M - \m$.
+Then, from the definitions of $U(f, \mathcal{P}) \text{ and } L(f, mathcal{P})$ and the corresponding upper and lower sums on $|f|$, we have 
+\begin{align*}
+\sum_{i=1}^{n}\Mprime(t_{i-1} - t_{i}) - \sum_{i=1}^{n}\mprime(t_{i-1} - t_{i}) &= \sum_{i=1}^{n}(\Mprime - \mprime)(t_{i-1} - t_{i})\\
+&\leq \sum_{i=1}^{n}(\M - \m)(t_{i-1} - t_{i})\\
+&= \sum_{i=1}^{n}\M(t_{i-1} - t_{i}) - \sum_{i=1}^{n}\m(t_{i-1} - t_{i})\\
+&=U(f, \mathcal{P}) - L(f, \mathcal{P})
+\end{align*}
+\subsection*{b.)}
+If $f$ integrable, $\exists \mathcal{P}: U(f, \mathcal{P})- L(f, \mathcal{P}) < \varepsilon$. Since from the above, $U(|f|, \mathcal{P}) - L(|f|, \mathcal{P}) \leq U(f, \mathcal{P}) - L(f, \mathcal{P}) < \varepsilon$, $|f|$ satisfies the Riemann criterion, so it is integrable.
+\subsection*{c.)}
+$f + |f| = 2f_{+}$, so $\frac{f}{2} + \frac{|f|}{2} = f_{+}$. Since we've proven that both of those functions are integrable, so is $f_{+}$. The same arugment applies to $f_{-}$, which can be written as $\frac{f}{2} - \frac{|f|}{2}$.
+\end{document}
