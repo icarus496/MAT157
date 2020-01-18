@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{bbold}
+\newcommand{\parti}{\mathcal{P}}
+\begin{document}
+Let $g^{+}$ be a nonzero upper bound for $g$ and $g^{-}$ be a nonzero lower bound for $g$, with $|g^{+}| > |g^{-}|$. Then, consider a partition $\mathcal{P}_{1}$ on $[a, x_{0}-\delta]$ and $\parti_2$ on $[x_{0} + \delta, b]$, such that $\frac{\varepsilon}{3} > U(f, \parti_{1}) - L(f, \parti_{1}) \text{ and } \frac{\varepsilon}{3} > U(f, \parti_{2}) - L(f, \parti_{2})$. Then, 
+\begin{equation}
+U(g, \parti_{1} \cup \parti_{2}) \leq U(g, \parti_{1}) + U(g,\parti_{2}) + g^{+}(x_{0} + \delta - (x_{0} + \delta)) = U(g, \parti_{1}) + U(g,\parti_{2}) + g^{+}(2\delta)
+\end{equation}
+and 
+\begin{equation}
+L(g, \parti_{1} \cup \parti_{2}) \geq L(g, \parti_{1}) + L(g,\parti_{2}) + g^{-}(2\delta)) 
+\end{equation}
+So, by multiplying both sides of (2) by  and adding them to (1), get 
+\begin{align*}
+U(g, \parti_{1} \cup \parti_{2}) - L(g, \parti_{1} \cup \parti_{2}) &\leq  U(g, \parti_{1}) + U(g,\parti_{2}) + g^{+}(2\delta) - L(g, \parti_{1}) - L(g,\parti_{2}) - g^{-}(2\delta))\\
+&= U(g, \parti_{1}) -  L(g, \parti_{1}) +  U(g,\parti_{2}) - L(g,\parti_{2}) +  g^{+}(2\delta) - g^{-}(2\delta))\\
+&= U(f, \parti_{1}) - L(f, \parti_{1}) + U(f, \parti_{2}) - L(f, \parti_{2}) + (g^{+} - g^{-})(2\delta)\\
+&<\frac{\varepsilon}{3} + \frac{\varepsilon}{3} + (g^{+} - g^{-})(2\delta)
+\end{align*}
+So, we just need to pick a $\delta$ that forces $(g^{+} - g^{-})(2\delta) < \frac{\varepsilon}{3}$. Obviously, $\delta < \frac{\varepsilon}{2(g^{+}-g^{-})}$ suffices, so $g$ is integrable on $[a, b]$ by the Riemann Criterion. Now, just need to show that 
+\begin{equation}
+\int_{a}^{b} g = \int_{a}^{b}f
+\end{equation}
+I'll show this by showing that $U(g, \parti_{1} \cup \parti_{2}) - U(f, \parti_{1} \cup \parti_{2})$ can be made as small as we want, through a similar argument to above.
+\begin{align*}
+U(g, \parti_{1} \cup \parti_{2}) - U(f, \parti_{1} \cup \parti_{2}) &= \sum_{i=0}^{n} M_{ig} - \sum_{i=0}^{n} M_{if} &&\text{Where $M_{ig}$ and $M_{if}$ are the $M_{i}$s for $g$ and $f$ respectively}\\
+&= \sum_{i=1}^{n} (M_{gi} - M_{fi})(t_{i-1} - t_{i}) &&\text{$f = g ,\forall x \notin [x_{0}-\delta, x_{0} + \delta]$ ,all terms 0 except in $\delta$-interval}\\
+&=(M_{gi} - M_{fi})(2\delta)\\
+\end{align*}
+And we know $M_{gi} \leq g^{+}$ and $M_{fi} \geq f^{-}$ (where $f^{-}$ is a lower bound for $f$), so we can say $M_{gi} - M_{fi} \leq g^{+} - f^{-}$ (and again, we just pick an upper bound for $g$ so that the difference is not $0$). Then, we have:
+\begin{align*}
+(M_{gi} - M_{fi})(2\delta) &\leq (g^{+} - f^{-})(2\delta)\\
+\end{align*}
+So we want to pick a $\delta$ forcing $(g^{+} - f^{-})(2\delta) < \varepsilon$ for a given $\varepsilon$, and $\delta < \frac{\varepsilon}{2(g^{+} - f^{-})}$ suffices, so that means $\forall \varepsilon \exists \parti: U(g, \parti_{1} \cup \parti_{2}) - U(f, \parti_{1} \cup \parti_{2}) < \varepsilon \Rightarrow U(g) = U(f)$, and since we know $g$ and $f$ are integrable, we know $U(g) = L(g) = U(f) = L(f) \Rightarrow \int_{a}^{b} g = \int_{a}^{b}f$, and we're done.
+\end{document}
