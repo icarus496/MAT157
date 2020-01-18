@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{bbold}
+\begin{document}
+\subsubsection*{ii).}
+Area is given by 
+\begin{align*}
+|\int_{-1}^{1} x^{2}| + |\int_{-1}^{1} -x^{2}| &= 2|\int_{-1}^{1} x^{2}|\\
+&=2\left(\frac{1}{3}-\frac{-1}{3}\right)\\
+&=\frac{4}{3}\\
+\end{align*}
+\subsection*{iv).}
+First, note that $f(x)$ intersects $h(x)$ at $x=-\sqrt{2}, \sqrt{2}$, $g(x)$ intersects $f(x)$ at $\frac{-1}{\sqrt{2}}, \frac{1}{\sqrt{2}}$, and the x axis at $-1, 1$. Given this, the area is given by:
+\begin{align*}
+&=\int_{-\sqrt{2}}^{\sqrt{2}} 2 - \int_{-\sqrt{2}}^{\sqrt{2}} x^{2} - \int_{-1}^{1} 1 - x^{2} + \left( \int_{\frac{1}{-\sqrt{2}}}^{\frac{1}{\sqrt{2}}} x^{2} + 2\int_{1}^{\sqrt{2}} 1-x^2\right)\\
+&=\frac{8\sqrt{2}}{3} - 2 + \frac{2}{3} + \frac{1}{3\sqrt{2}} + 2\sqrt{2} - 1 - \frac{4\sqrt{2}}{3} + \frac{2}{3}\\
+&=\frac{7}{\sqrt{2}} - \frac{8}{3}
+\end{align*}
+\subsection*{vi).}
+Know $\sqrt{x}$ is $x^2$ "rotated" nintey degrees, and know it intersects waith the vertical line at $y=\sqrt{2}$. So, really, this is same as finding:
+\begin{align*}
+\int_{0}^{\sqrt{2}} 2 - \int_{0}^{\sqrt{2}} x^2 &= 2\sqrt{2} - \frac{2\sqrt{2}}{3}\\
+&=\frac{4\sqrt{2}}{3}
+\end{align*}
+\end{document}
