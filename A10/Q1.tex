@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{bbold}
+\begin{document}
+\subsubsection*{ii}
+Let 
+\begin{equation*}
+v(x) = \int_{1}^{x} sin^{3}t \text{ } dt\\
+\end{equation*}
+and 
+\begin{equation*}
+q(x) = \int_{3}^{x}\frac{1}{1+sin^{6}t + t^2} \text{ } dt
+\end{equation*}
+So, $F(x) = v(q(x))$, so $\frac{dF}{dx} = \frac{dv}{dq} \frac{dq}{dx}$, so 
+\begin{align*}
+\frac{dF}{dx} &= \frac{1}{1+sin^{6}(x) + v^{2}} sin^{3}(x)\\
+&= \frac{sin^{3}(x)}{1+sin^{6}(\int_{1}^{x} sin^{3}t \text{ } dt) + (\int_{1}^{x} sin^{3}t \text{ } dt)^{2}}
+\end{align*}
+\subsubsection*{iv}
+\begin{align*}
+F(x) &= \int_{b}^{x} \frac{1}{1+t^{2} + sin^{2}t} \quad dt\\
+&= -\int_{b}^{x} \frac{1}{1+t^{2} + sin^{2}t} \quad dt\\
+F^{\prime}(x) &= \frac{-1}{1+x^{2}+sin^{2}x}
+\end{align*}
+\subsubsection*{vi}
+$u(x) = \int_{0}^{x} sin(\int_{0}^{y}sin^{3}t \quad dy)\quad dt$\\
+$F(x) = sin(u(x))$\\
+So, $F^{\prime} = cos(u(x))u^{\prime} = cos(\int_{0}^{x}sin(\int_{0}^{y} sin^{3} dt)dy) sin(\int_{0}^{x}sin^{3}tdt)$
+\subsubsection*{viii}
+
+\end{document}
