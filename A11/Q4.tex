@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{bbold}
+\begin{document}
+\subsubsection*{b).}
+Since the maximum of $f$ is $(e, \frac{1}{e})$, and $f$ decreasing after that, we have 
+\begin{align*}
+f(\pi) &< f(e)\\
+\frac{log(\pi)}{\pi} &< \frac{log(e)}{e}\\
+e log(\pi) &< \pi log(e)\\
+exp(e log(\pi)) &< exp(\pi log(e))\\
+\pi^{e} &< e^{\pi}
+\end{align*}
+\subsubsection*{c).}
+\begin{align*}
+x^{y} &= y^{x}\\
+\frac{log(y)}{y} &= \frac{log(x)}{x}\\
+\end{align*}
+This means that $x^{y} = y^{x} \iff f(x) = f(y)$. 
+Since for $x\leq 1$ $f$ is increasing, this equation is true iff $y = x$. If $x = e$, $f$ is at a maximum, so there are no other solutions than $y=x$. 
+
+If $x > 1$, $f$ is decreasing for $x>e$ and decreasing for $x<e$, meaning there if there is a solution for $f(y) = f(x)$ with $x \neq y$, there is exactly 1, and  if $1 < x < e$, then $ e < y$ (or vice-versa). Now, since $f$ is continuous on $(0, \infty)$, and on $(1, e), f \in (0, \frac{1}{e}$, and similarly, $(e, \infty), f \in (\frac{1}{e}, \infty)$, we know by IVT that for each $f(x), x \in (1, e)$ there's a corresponding $y \in (e, \infty)$ such that $f(y) = f(x)$. 
+\subsubsection*{d).}
+Suppose $x, y$ are natural numbers with $f(y) = f(x)$ and $x \neq y$. We know that either $x$ or $y$ must be in $(1, e)$, which means that either $x = 2$ or $y = 2$. Suppose, wlog, that $x = 2$(since we can just swap $x$ and $y$ below if not). Then, have \begin{align*}
+\frac{log(2)}{2} &= \frac{y}{y}\\
+ylog(2) &= 2log(y)\\
+2^{y} &= y^{2}
+\end{align*}
+It's obvious that 4 satisfies this equation, and by $c.$ we know there's only 1 $y$ satisfying this equation, so $y = 4$ is the only solution, and we're done.
+\end{document}

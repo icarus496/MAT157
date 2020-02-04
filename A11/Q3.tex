@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{bbold}
+\begin{document}
+Define $\forall n \in \mathbb{N}$ \[ f(x) = \begin{cases}
+n+\frac{1}{2} - \frac{1}{n2^{n+1}} < x < n + \frac{1}{2} & n^{2}2^{n+2}x + (2n - n^{2}2^{n+2}(n+\frac{1}{2})\\
+n+\frac{1}{2} \leq x < n+\frac{1}{2} + \frac{1}{n2^{n+1}} & -n^{2}2^{n+2}x + (2n + n^{2}2^{n+2}(n+\frac{1}{2})\\
+else &0
+\end{cases} 
+\]
+This function looks pretty bad, but it's describing just describing a function everywhere 0 except in between natural numbers, where it forms a triangle(with straight line sides) of height $2n$ and base $\frac{1}{2*2^{n}}$.
+
+First, this function is continuous. In order to prove this, note that $f$ is obviously continuous on each piece, so just need to check the transition points.
+
+Check for $x = n+\frac{1}{2} - \frac{1}{n2^{n+1}}$. $f(x) = 0$, 
+\begin{align*}
+\lim_{x \rightarrow {n+\frac{1}{2} - \frac{1}{n2^{n+1}}}^{+}} f(x) &= n^{2}2^{n+2}(n+\frac{1}{2} - \frac{1}{n2^{n+1}}) + (2n - n^{2}2^{n+2}(n+\frac{1}{2}))\\
+&=0
+\end{align*}
+Similarly, we can check for $x = n + \frac{1}{2} (f(x) = 2n)$:
+\begin{align*}
+\lim_{x \rightarrow {n + \frac{1}{2}}^{-}} f(x) &=  n^{2}2^{n+2}( n + \frac{1}{2}) + (2n - n^{2}2^{n+2}(n+\frac{1}{2}))\\
+&= 2n
+\end{align*}
+Finally, check for $x =n+\frac{1}{2} + \frac{1}{n2^{n+1}} (f(x) = 0)$:
+\begin{align*}
+\lim_{x \rightarrow {n+\frac{1}{2} + \frac{1}{n2^{n+1}}}^{-}} f(x) &= -n^{2}2^{n+2}(n+\frac{1}{2} + \frac{1}{n2^{n+1}}) + (2n + n^{2}2^{n+2}(n+\frac{1}{2}))\\
+&=0
+\end{align*}
+So we now know $f$ is continuous on $[0, \infty)$. 
+
+The only pieces of $f$ that could be negative are the lines. However, since they're lines, and the first line starts at 0 and goes to $2n$ and the second line starts at $2n$ and ends at 0 this function is always nonnegative.
+
+To show it has no upper bound, note that at $n+\frac{1}{2}$ $f$ takes the value $2n$. So, for any $M \in \mathbb{R}$, $f(ceil(M) + \frac{1}{2}) = 2((ceil(M)+1) > M$.
+
+Now, we need to show that the integral of $f$ converges to 1. Since $f$ is always nonnegative, we know that $F(x) = \int_{0}^{x} f(x)$ is nondecreasing. Since between triangles $\int_{n+\frac{1}{2} + \frac{1}{n2^{n+1}}}^{n+\frac{1}{2} - \frac{1}{n2^{n+1}}} f = 0$,  we know that at every $n \in \mathbb{N}$, $F(n)$ is just given by the sum of the area of the previous $n-1$ triangles. In other words, $\forall n \in \mathbb{N}$:
+\begin{align*}
+F(n) &= \sum_{i=1}^{n-1}\left[
+\int_{i + \frac{1}{2} - \frac{1}{i2^{i+1}}}^{i+\frac{1}{2}} i^{2}2^{i+1}x + (2i - i^{2}2^{i+1}(i+\frac{1}{2})) +
+\int_{i+\frac{1}{2}}^{i + \frac{1}{2} + \frac{1}{i2^{i+1}}}-i^{2}2^{i+1}x + (2i + i^{2}2^{i+1}(i+\frac{1}{2}))\right]\\
+&= \sum_{i=1}^{n-1}\left[
+(i^{2}2^{i+1}x^{2} + (2i - i^{2}2^{i+1}(i+\frac{1}{2}x)|_{i + \frac{1}{2} - \frac{1}{i2^{i+1}}}^{i + \frac{1}{2}} + 
+(-i^{2}2^{i+1}x^{2} + (2i + i^{2}2^{i+1}(i+\frac{1}{2}x)|_{i + \frac{1}{2}}^{i + \frac{1}{2} - \frac{1}{i2^{i+1}}} \right]\\
+&=\sum_{i=1}^{n-1}\left[2^{-i - 1} + 2^{-i - 1} \right]\\
+&=\sum_{i=1}^{n-1} 2^{-i}
+\end{align*} 
+So, that means for $n \in \mathbb{N}, F(n) = \sum_{i=1}^{n-1} 2^{-i}$
+Now we just need to find $lim_{x\rightarrow \infty} F(x)$.
+Since $F(x)$ is nondecreasing, $\forall n \in \mathbb{N} n\leq x \leq n+1 \Rightarrow F(n) \leq F(x) \leq F(n+1)$. Also, note that since $F(n) = \sum_{i=1}^{n-1} 2^{-i}, lim_{n\rightarrow \infty} F(n) = lim_{n\rightarrow \infty} \sum_{i=1}^{n-1} 2^{-i} = 1$. Or, 
+\begin{equation*}
+\forall \varepsilon>0 \forall n \in \mathbb{N} \exists M \in \mathbb{N}: n>M \rightarrow |F(n) - 1| < \varepsilon
+\end{equation*}
+Fix an $\varepsilon$, and let $M^{\prime} = ceil(M) + 2$. Then, $x>M^{\prime} \Rightarrow \exists n \in \mathbb{N}: n+1\geq x\geq n > m$. That implies that $F(n) \leq F(x) \leq F(n+1)$, and since $n>M$, we have $F(n) - 1 \leq F(x) - 1 \leq F(n+1) - 1 \Rightarrow |F(x) - 1| \leq max\{|F(n) - 1|, |F(n+1) - 1|\} < \varepsilon$. Therefore, $lim_{x \rightarrow \infty} F(x) = 1$, as desired.
+\end{document}

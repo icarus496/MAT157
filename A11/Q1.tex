@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{bbold}
+\begin{document}
+\subsubsection*{a)}
+For all $x>1$, $\frac{sqrt{x}}{x^{2}} > \frac{\sqrt{x}}{1+x^{2}}$, we have
+\begin{equation}
+\int_{1}^{\infty} \frac{\sqrt{x}}{x^{2}} >\int_{1}^{\infty} \frac{\sqrt{x}}{x^{2}+1}
+\end{equation}
+and we have \begin{align*}
+\int_{1}^{\infty} \frac{\sqrt{x}}{x^{2}} &= \int_{1}^{\infty} \frac{1}{x\sqrt{x}}\\
+&= \int_{1}^{\infty} x^{-\frac{3}{2}}\\
+&= \lim_{x \rightarrow \infty} \left(\frac{-2}{\sqrt{x}} + 2 \right)\\
+&= 2
+\end{align*}
+And since this converges, so does $ \frac{\sqrt{x}}{1+x^{2}}$.
+\subsubsection*{b)}
+Note that $sin(x) = x$ at $x=0$ and $\frac{d}{dx}x = 1 \geq cos(x) = \frac{d}{dx} sin(x)$. So, we have on $[0, \frac{\pi}{4}] x \geq sin(x) \Rightarrow \frac{1}{x} \leq \frac{1}{sin(x}$. Therefore, 
+\begin{equation*}
+\int_{0}^{\frac{pi}{4}} \frac{1}{x} \leq \int_{0}^{\frac{pi}{4}} \frac{1}{sin(x)} 
+\end{equation*}
+But:
+\begin{align*}
+\int_{0}^{\frac{pi}{4}} \frac{1}{x}  &= log(\frac{\pi}{4}) - \log(0)\\
+&= log(\frac{\pi}{0})\\
+&= \infty
+\end{align*}
+Since this diverges, so does $\int_{0}^{\frac{pi}{4}} \frac{1} {sin(x)}$
+\subsubsection*{c)}
+Since $\sqrt{log(x)} \leq \sqrt{x}, x\geq 1$ then $\frac{\sqrt{x}}{x^{2}} \geq \frac{\sqrt{log(x)}}{x^{2}}$.
+And we have from a) that
+\begin{equation*}
+\int_{1}^{\infty} \frac{\sqrt{x}}{x^{2}}
+\end{equation*}
+converges, it follows that 
+\begin{equation*}
+\int_{1}^{\infty} \frac{\sqrt{log(x)}}{x^{2}}
+\end{equation*}
+also converges.
+\end{document}
+
