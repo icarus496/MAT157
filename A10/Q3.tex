@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{bbold}
+\newcommand{\parti}{\mathcal{P}}
+\begin{document}
+Let $f(x) = x^{k}$, $\mathcal{P} = \{0, 1, ... ,n\}$. Then, $L(f, \parti) = \sum_{i=1}^{n} m_{i} =  \sum_{i=1}^{n} (n-1)^{k} = S_{k}(n-1)$ and $U(f, \parti) = \sum_{i=1}^{n} M_{i} = \sum_{i=1}^{n} (n)^{k} = S_{k}(n)$.
+
+So, know
+\begin{equation*}
+L(f, \parti) \leq \int_{0}^{n} f(x)dx \leq M{f, \parti}
+\end{equation*}
+and 
+\begin{equation*}
+\int_{0}^{n} x^{k}dx = \frac{n^{k+1}}{n+1}
+\end{equation*}
+And so, 
+\begin{equation*}
+S_{k}(n-1) = L(f, \parti) \leq \int_{0}^{n} x^{k}dx = \frac{n^{k+1}}{n+1} \leq M(f, \parti) = S_{k}(n)
+\end{equation*}
+So 
+\begin{equation*}
+S_{k}(n-1) \leq  \frac{n^{k+1}}{n+1} \leq S_{k}(n)
+\end{equation*}
+As desired.
+\end{document}

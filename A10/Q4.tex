@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{bbold}
+\newcommand{\parti}{\mathcal{P}}
+\begin{document}
+Consider a partition $\parti$ on $[a,b]$. Let supremum and infimum of $f$ on $[t_{i-1}, t_{i}]$ me $M_{i} and m_{i}$ as usual. Notice that the supremum and infimum of $\frac{1}{f}$ on the same interval are (since $f \geq C > 0$ and f bounded) $\frac{1}{m_{i}}$ and $\frac{1}{M_{i}}$ respectively. Therefore, 
+\begin{align*}
+U(\frac{1}{f}, \parti) - L(\frac{1}{f}, \parti) &= \sum_{i=1}^{n} \frac{1}{m_{i}}(t_{i-1} - t_{i}) - \sum_{i=1}^{n} \frac{1}{M_{i}}(t_{i-1} - t_{i})\\
+&= \sum_{i=1}^{n} (\frac{1}{m_{i}} - \frac{1}{M_{i}})(t_{i-1} - t_{i})\\
+&= \sum_{i=1}^{n} \frac{1}{m_{i}M_{i}}(M_{i} - m_{i})(t_{i-1} - t_{i})\\
+&\leq \sum_{i=1}^{n} \frac{1}{C^{2}}(M_{i} - m_{i})(t_{i-1} - t_{i})\\
+&=\frac{1}{C^{2}}\sum_{i=1}^{n} (M_{i} - m_{i})(t_{i-1} - t_{i})\\
+&=\frac{1}{C^{2}}(U(f, \parti) - L(f, \parti))\\
+\end{align*}
+And since $f$ is integrable, we can make the above difference as small as we want. Pick a $\parti$ so that $(U(f, \parti) - L(f, \parti)) < C^{2}\varepsilon$ and we get 
+\begin{equation*}
+U(\frac{1}{f}, \parti) - L(\frac{1}{f}, \parti) \leq \frac{1}{C^{2}}(U(f, \parti) - L(f, \parti)) < \frac{C^{2}\varepsilon}{C^{2}} = \varepsilon
+\end{equation*}
+as desired.
+\end{document}

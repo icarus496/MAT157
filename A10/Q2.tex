@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{bbold}
+\begin{document}
+Let 
+
+\[ g(x) = \begin{cases}
+0 & x=0\\
+x^{2}sin\left(\frac{1}{x}\right) & x \neq 0\\
+\end{cases}
+ \]
+and 
+\[h(x) = \begin{cases}
+0 & x=0\\
+2xsin \left(\frac{1}{x}\right) & x \neq 0\\
+\end{cases}
+\]
+We know
+\[ g^{\prime}(x) = \begin{cases}
+0 & x=0\\
+2xsin\left(\frac{1}{x}\right) - cos\left(\frac{1}{x}\right) & x \neq 0\\
+\end{cases}
+ \]
+So $f(x) = h(x) - g^{\prime}(x)$. Then,
+\begin{align*}
+F(x) &= \int_{0}^{x} f(t) dt\\
+&= \int_{0}^{x} (h(t) - g^{\prime}(t)) dt\\
+&= \int_{0}^{x}  h(t) dt - \int_{0}^{x} g^{\prime}(t)dt\\
+&= \int_{0}^{x}  h(t) dt - g(x) &&\text{from FTC 2}\\
+F^{\prime}(x) &= \frac{d}{dx} (\int_{0}^{x}  h(t) dt - g(x))\\
+&= h(x) - g^{\prime}(x) && \text{By FTC 1, since $h(x)$ is continuous}\\
+\end{align*}
+So, \[ F^{\prime}(x) = \begin{cases} 
+	0 & x=0\\
+	cos\left(\frac{1}{x}\right) & x\neq0\\
+	\end{cases}
+	\]
+Meaning $F(x)$ is differentable.
+\end{document}

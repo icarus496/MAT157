@@ -25,9 +25,20 @@ F(x) &= \int_{b}^{x} \frac{1}{1+t^{2} + sin^{2}t} \quad dt\\
 F^{\prime}(x) &= \frac{-1}{1+x^{2}+sin^{2}x}
 \end{align*}
 \subsubsection*{vi}
-$u(x) = \int_{0}^{x} sin(\int_{0}^{y}sin^{3}t \quad dy)\quad dt$\\
-$F(x) = sin(u(x))$\\
-So, $F^{\prime} = cos(u(x))u^{\prime} = cos(\int_{0}^{x}sin(\int_{0}^{y} sin^{3} dt)dy) sin(\int_{0}^{x}sin^{3}tdt)$
-\subsubsection*{viii}
+\begin{align*}
+u(x) &= \int_{0}^{x} sin(\int_{0}^{y}sin^{3}t \quad dy)\quad dt\\
+F(x) &= sin(u(x))\\
+F^{\prime} &= cos(u(x))u^{\prime}\\
+&= cos(\int_{0}^{x}sin(\int_{0}^{y} sin^{3} dt)dy) sin(\int_{0}^{x}sin^{3}tdt)
+\end{align*}
 
+\subsubsection*{viii}
+\begin{align*}
+F(F^{-1}(x)) &= x\\
+\int_{0}^{F^{-1}(x)} \frac{1}{\sqrt{1-t^{2}}} dt\\
+\frac{d}{dx} F(F^{-1}(x)) &= 1\\
+F^{\prime}(F^{-1}(x)) F^{-1 \prime}(x)&= 1\\
+\frac{1}{\sqrt{1-(F^{-1}(x))^{2})}} {F^{-1}}^{ \prime}(x)&= 1\\
+{F^{-1}}^{ \prime}(x) &= \sqrt{1-(F^{-1}(x))^{2})}
+\end{align*}
 \end{document}
