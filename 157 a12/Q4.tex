@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{bbold}
+\newcommand{\sfunc}{S_{\mathcal{P}}}
+\begin{document}
+\subsubsection*{4a}
+\begin{align*}
+	\int_{a}^{b}sin(\lambda x) dx &= -\frac{cos(\lambda x}{\lambda}|^{b}_{a}\\
+	&= \frac{-cos \lambda b}{\lambda} + \frac{cos \lambda a}{\lambda}\\
+	\lim_{\lambda \rightarrow \infty} \int_{a}^{b}sin(\lambda x) dx &=  \lim_{\lambda \rightarrow \infty} (\frac{-cos \lambda b}{\lambda} - \frac{cos \lambda a}{\lambda})\\
+	&=\lim_{\lambda \rightarrow \infty} \frac{1}{\lambda} (cos \lambda a - cos \lambda b)\\
+	&\text{Since $-1 \leq cos \lambda x \leq 1$}\\
+	\frac{-2}{\lambda} \leq \frac{1}{\lambda}(cos \lambda a &- cos \lambda b) \leq \frac{-2}{\lambda}\\
+	\lim_{\lambda \rightarrow \infty} \frac{-2}{\lambda} &= \lim_{\lambda \rightarrow \infty} \frac{2}{\lambda}\\ 
+\end{align*}
+So by the squeeze theorem, $\lim{\lambda \rightarrow \infty} \frac{1}{\lambda} (cos \lambda a - cos \lambda b) = \lim_{\lambda \rightarrow \infty} \int_{a}^{b}sin(\lambda x) dx = 0$.
+\subsubsection*{4b}
+\begin{align*}
+lim_{\lambda \rightarrow \infty} \int_{a}^{b}s(x)sin\lambda x dx &= lim_{\lambda \rightarrow \infty} \sum_{i=1}^{n} \int_{t_{i-1}}^{t_{i}}s(x)sin\lambda x dx\\
+&= lim_{\lambda \rightarrow \infty} \sum_{i=1}^{n} \int_{t_{i-1}}^{t_{i}}c_{i}sin\lambda x dx  && \textit{Since $s$ is a step function on $[t_{i-1}, t_{i}]$}\\
+&= \sum_{i=1}^{n} c_{i} lim_{\lambda \rightarrow \infty}  \int_{t_{i-1}}^{t_{i}}sin\lambda x dx\\
+&= \sum_{i=1}^{n} c_{i}(0)\\
+&= 0
+\end{align*}
+\subsubsection*{4c}
+Let $S_{\mathcal{P}} = x \in [t_{i-1}, t_{i}]: m_{i}$. A bit of an abuse of notation but it's just a step function defined on the partition $\mathcal{P}$ equal to the infimum of $f$ on each interval in the partition. Then, $\sfunc$ is integrable, since $U(\sfunc, \mathcal{P}) = L(\sfunc, \mathcal{P})$. So, we know 
+
+\end{document}
