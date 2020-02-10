@@ -4,6 +4,7 @@
 \usepackage{amsmath}
 \usepackage{bbold}
 \newcommand{\sfunc}{S_{\mathcal{P}}}
+\newcommand{\si}{sin\lambda x}
 \begin{document}
 \subsubsection*{4a}
 \begin{align*}
@@ -25,6 +26,35 @@ lim_{\lambda \rightarrow \infty} \int_{a}^{b}s(x)sin\lambda x dx &= lim_{\lambda
 &= 0
 \end{align*}
 \subsubsection*{4c}
-Let $S_{\mathcal{P}} = x \in [t_{i-1}, t_{i}]: m_{i}$. A bit of an abuse of notation but it's just a step function defined on the partition $\mathcal{P}$ equal to the infimum of $f$ on each interval in the partition. Then, $\sfunc$ is integrable, since $U(\sfunc, \mathcal{P}) = L(\sfunc, \mathcal{P})$. So, we know 
-
+Let $S_{\mathcal{P}} = (x \in [t_{i-1}, t_{i}]: m_{i})$. Forgive the abuse of notation but it's just a step function defined on the partition $\mathcal{P}$ equal to the infimum of $f$ on each interval in the partition. Then, $\sfunc$ is integrable, since $U(\sfunc, \mathcal{P}) = L(\sfunc, \mathcal{P})$. So, we know:
+\begin{equation*}
+\forall \varepsilon > 0, \exists \mathcal{P}_{1}: U(S_{\mathcal{P}_{1}}, \mathcal{P}_{1}) - \int_{a}^{b} S_{\mathcal{P}_{1}} < \varepsilon\\
+\end{equation*}
+\begin{equation*}
+\forall \varepsilon > 0, \exists \mathcal{P}_{2}: U(f, \mathcal{P}_{2}) - \int_{a}^{b}f < \varepsilon\\
+\end{equation*}
+\begin{equation*}
+\forall \varepsilon > 0, \exists \mathcal{P}_{3}: U(f, \mathcal{P}_{3}) - U(S_{\mathcal{P}_{3}}) < \varepsilon\\
+\end{equation*}
+We can rearrange these to get 
+\begin{equation*}
+\forall \varepsilon, \exists \mathcal{P}: \int_{a}^{b} f - \int_{a}^{b} \sfunc < \varepsilon
+\end{equation*}
+Now, consider the equation:
+\begin{align*}
+\left| \int_{a}^{b} f\si - \int_{a}^{b} \sfunc \si \right| &= \left|\int_{a}^{b}(f - \sfunc) \si \right|\\
+&< \left|\int_{a}^{b} \varepsilon \si \right|\\
+&\leq \int_{a}^{b} \varepsilon |\si|\\
+&\leq \int_{a}^{b} \varepsilon\\
+&= (b-a) \varepsilon\\
+&= \varepsilon &&\text{Since $\varepsilon$ is arbitrary}
+\end{align*}
+So, we know that for all $\varepsilon$ there exists a $\mathcal{P}$ such that
+\begin{align*}
+\left| \int_{a}^{b} f\si - \int_{a}^{b} \sfunc \si \right| &< \varepsilon\\
+lim_{\lambda \rightarrow \infty} \left| \int_{a}^{b} f\si - \int_{a}^{b} \sfunc \si \right| &< lim_{\lambda \rightarrow \infty} \varepsilon\\
+\left| lim_{\lambda \rightarrow \infty}  \int_{a}^{b} f\si  - 0 \right| &< \varepsilon\\
+-\varepsilon \leq  lim_{\lambda \rightarrow \infty} & \int_{a}^{b} f\si \leq \varepsilon
+\end{align*}
+Since this is true for all $\varepsilon$, we know that the limit must be 0.
 \end{document}
