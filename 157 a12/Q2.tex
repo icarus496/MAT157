@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{bbold}
+\begin{document}
+\subsubsection*{Q2a}
+Let $y = arctan x$, then $x = tan (y) = \frac{sin y }{cos y} = \frac{sin y }{\sqrt{1-sin^{2}y}}$
+\begin{align*}
+x &= \frac{sin y }{\sqrt{1-sin^{2}y}}\\
+x^{2} - x^{2}sin^{2}y &= sin^{2}y\\
+x^{2} = sin^{2}(y) (1+x^{2}\\
+sin^{2}y &= \frac{x^{2}}{1+x^{2}}\\
+sin (y) &= \frac{x}{\sqrt{1+x^{2}}}
+\end{align*}
+For $cos(y)$:
+\begin{align*}
+cos(y) &= \sqrt{1-sin^{2}y}\\
+&= \sqrt{1-\frac{x^{2}}{1+x^{2}}}\\
+&=\sqrt{\frac{1+x^{2} - x^{2}}{1+x^{2}}}\\
+&=\frac{1}{\sqrt{1+x^{2}}}
+\end{align*}
+\subsubsection*{Q2b}
+\begin{align*}
+sin(u) &= sin(2\frac{u}{2})\\
+&= sin(2arctan(x))\\
+&=2sin(arctan(x))cos(arctan(x))\\
+&=2\frac{x}{\sqrt{1+x^{2}}}\frac{1}{\sqrt{1+x^2}}\\
+&=\frac{2x}{1+x^{2}}
+\end{align*}
+\begin{align*}
+cos(u) &= cos(2arctan(x))\\
+&= 2cos^{2}(arctan(x)) - 1\\
+&=\frac{2}{1+x^{2}} - 1\\
+&= \frac{1-x^{2}}{1+x^{2}}
+\end{align*}
+\end{document}
