@@ -11,5 +11,62 @@ x > 0 & e^{-\frac{1}{x}}\\
 x \leq 0 &0\\
 \end{cases}
 \]
-So, notice that f is continuous, since $
+So, notice that f is continuous, since $lim_{x\rightarrow 0 ^{+}} f(x) = lim_{x\rightarrow 0 ^{-}} f(x) = 0$. Now, need to show it is infinitely differentiable. It's obvious that $f$ is infinitely differentiable on $(-\infty, 0), (0, \infty)$, so we just need to show that $lim_{x\rightarrow 0 ^{+}} f^{(n)}(x) = lim_{x\rightarrow 0 ^{-}} f^{(n)}(x)$. Obviously $lim_{x\rightarrow 0 ^{-}} f^{(n)}(x) = 0$.  First, I claim that for $x>0$, $f^{(n)}(x) = P_{n}(x)f(x)$. Proof (by induction)\\
+Base case: $n=1$:
+\begin{align*}
+f^{\prime}(x) &= \frac{1}{x^{2}}e^{\frac{-1}{x}}\\
+\end{align*}
+Now, assume $f^{(n-1)}(x) = P_{n-1}(x)f(x)$. Then, need to show for $f^{(n)}$.
+\begin{align*}
+f^{(n)} &= \frac{d}{dx} f^{(n-1)}(x)\\
+&= \frac{d}{dx} P_{n-1}(x)f(x)\\
+&= P_{n-1}^{\prime}(x)f(x) + \frac{1}{x^2}P_{n-1}(x)f(x)\\
+&=f(x)( P_{n-1}^{\prime}(x) + \frac{1}{x^2}P_{n-1}(x))\\
+&= f(x)P_{n}(x)
+\end{align*} 
+So, $lim_{x\rightarrow 0^{+}} = f^{(n)}(x) =lim_{x\rightarrow 0^{+}} P_{n}(x) e^{\frac{-1}{x}} =lim_{x\rightarrow 0^{+}} \frac{P_{n}(x)}{e^{\frac{1}{x}}} = lim_{x\rightarrow \infty} \frac{P_{n}(\frac{1}{x})}{e^{x}} = 0$.
+
+So, $f$ is everywhere differentiable.
+
+\subsubsection*{Q3b}
+\[f(x) = \begin{cases}
+|x| \geq 1 & 0\\ 
+|x| \leq 1 &e^{\frac{x^{2}}{x^{2}-1}}\\
+\end{cases}
+\]
+Again, define a rational function:
+\begin{align*}
+P_{1}(x) &= \frac{2x(x^{2}-1) - x^{2}(2x)}{(x^{2} - 1)^{2}}\\
+P_{n}(x) &= P_{n-1}^{\prime}(x) +P_{n-1}(x) \frac{2x(x^{2}-1) - x^{2}(2x)}{(x^{2} - 1)^{2}}
+\end{align*}
+We claim, for $-1<x<1$, $f^{(n)}(x) = P_{n}(x)f(x)$.\\
+Base case $n=1$:
+\begin{equation*}
+f^{\prime}(x) = f(x)\frac{2x(x^{2}-1) - x^{2}(2x)}{(x^{2} - 1)^{2}} = f(x)P_{1}(x)
+\end{equation*}
+Assume $f^{(n-1)}(x) = P_{n-1}(x)f(x)$.
+Then, 
+\begin{align*}
+f^{(n)}(x) &= \frac{d}{dx}f^{(n-1)}(x)\\
+&=\frac{d}{dx}P_{n-1}(x)f(x)\\
+&= P_{n-1}^{\prime}(x)f(x) + \frac{2x(x^{2}-1) - x^{2}(2x)}{(x^{2} - 1)^{2}}P_{n-1}(x) f(x)\\
+&=f(x)(P_{n-1}^{\prime}(x)+ \frac{2x(x^{2}-1) - x^{2}(2x)}{(x^{2} - 1)^{2}}P_{n-1}(x))\\
+&=f(n)P_{n}(x)\\
+\end{align*}
+Notice that both $f$ and $P_{n}$ are continuous for all $-1<x<1$, so we know $f$ is infinitely differentiable for all $x$ except maybe -1 and 1. So, just need to check those limits.
+\begin{align*}
+\lim_{x\rightarrow -1^{+}} f^{(n)}(x) &= \lim_{x\rightarrow -1^{+}} e^{\frac{x^{2}}{x^{2}-1}} P_{n}(x)\\
+&=\lim_{u\rightarrow 0^{-}} e^\frac{u+1}{u}P_{n}(\sqrt{u+1})\\
+&=\lim_{u\rightarrow -\infty} e^\frac{\frac{1}{u}+1}{\frac{1}{u}}P_{n}(\sqrt{\frac{1}{u}+1})\\
+&=e \lim_{u\rightarrow -\infty} e^{u} P_{n}(\sqrt{\frac{1}{u}+1})\\
+&= 0 
+\end{align*}
+\begin{align*}
+\lim_{x\rightarrow 1^{-}} f^{(n)}(x) &= \lim_{x\rightarrow 1^{-}} e^{\frac{x^{2}}{x^{2}-1}} P_{n}(x)\\
+&=\lim_{u\rightarrow 0^{-}} e^\frac{u+1}{u}P_{n}(\sqrt{u+1})\\
+&=\lim_{u\rightarrow -\infty} e^\frac{\frac{1}{u}+1}{\frac{1}{u}}P_{n}(\sqrt{\frac{1}{u}+1})\\
+&=e \lim_{u\rightarrow -\infty} e^{u} P_{n}(\sqrt{\frac{1}{u}+1})\\
+&= 0 
+\end{align*}
+So, since $\lim_{x\rightarrow -1^{+}} f^{(n)}(x) = \lim_{x\rightarrow -1^{-}} f^{(n)}(x) = 0$ and $\lim_{x\rightarrow 1^{-}} f^{(n)}(x) = \lim_{x\rightarrow 1^{+}} f^{(n)}(x) = 0$, and $f$ is differentiable everywhere else, $f$ is infinitely differentiable. 
 \end{document}
